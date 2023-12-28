@@ -19,8 +19,9 @@ final class LogLocation {
     var adressStringLocality: String
     var logging: Bool
     var loggingActivationStatus: Bool
+    var orderValue: Int
     
-    init(uuid: UUID = UUID(), title: String, latitude: Double, longitude: Double, adressString: String, adressStringStreet: String = "", adressStringLocality: String = "", logging: Bool, loggingActivationStatus: Bool = false) {
+    init(uuid: UUID = UUID(), title: String, latitude: Double, longitude: Double, adressString: String, adressStringStreet: String = "", adressStringLocality: String = "", logging: Bool, loggingActivationStatus: Bool = false, orderValue: Int = 1000) {
         self.uuid = uuid
         self.title = title
         self.latitude = latitude
@@ -30,5 +31,6 @@ final class LogLocation {
         self.adressStringLocality = adressStringLocality
         self.logging = logging
         self.loggingActivationStatus = loggingActivationStatus
+        self.orderValue = orderValue
     }
 }

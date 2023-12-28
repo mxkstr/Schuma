@@ -19,6 +19,8 @@ struct LocationOverview: View {
     
     @State var logLocation: LogLocation
     
+    var locationManager = CLLocationManager()
+    
     var body: some View {
         NavigationStack {
             List {
@@ -54,6 +56,7 @@ struct LocationOverview: View {
                 showEditor = false
             }, content: {
                 Button ("löschen") {
+                    stopMonitoringVisits(uuid: logLocation.uuid)
                     modelContext.delete(logLocation)
                     showEditor = false
                     show = false

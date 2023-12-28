@@ -14,7 +14,7 @@ struct LocationSearch: View {
     @State private var searchText = ""
     @State var results = [MKMapItem]()
     @Binding var show: Bool
-    @Binding var creation: LogLocation?
+    @Binding var creation: [LogLocation]
     @State var selectedItem: MKMapItem?
     @State var showResult = 0
     @State var distance = 100
@@ -36,6 +36,7 @@ struct LocationSearch: View {
                             Text(adressHelperString)
                         }
                         Text("\(item.placemark.postalCode ?? "no placemark"), \(item.placemark.subLocality ?? "no placemark"), \(item.placemark.locality ?? "no placemark"), \(item.placemark.country ?? "no placemark")")
+                        Text("\(item.placemark.location!.coordinate.latitude) - \(item.placemark.location!.coordinate.longitude)")
                     }
                 }
                 .onChange(of: selectedItem, { old, new in
@@ -47,7 +48,15 @@ struct LocationSearch: View {
             .searchable(text: $searchText)
             .disableAutocorrection(true)
             .onSubmit(of: .search) {
-                Task { await searchPlaces() }
+                if searchText == "A54-03" {
+                    creation = getLocationsA54()
+                    for location in creation {
+                        modelContext.insert(location)
+                    }
+                    show = false
+                } else {
+                    Task { await searchPlaces() }
+                }
             }
             .onChange(of: searchText, {
                 //Task { await searchPlaces() }

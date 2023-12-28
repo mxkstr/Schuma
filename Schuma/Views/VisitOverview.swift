@@ -10,7 +10,7 @@ import SwiftData
 
 struct VisitOverview: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var locations: [LogLocation]
+    @Query(sort: \LogLocation.orderValue) private var locations: [LogLocation]
     @Query(sort: \LocationVisit.timeStamp, order: .reverse) private var visits: [LocationVisit]
     
     @Binding var show: Bool

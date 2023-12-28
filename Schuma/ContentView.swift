@@ -16,11 +16,12 @@ struct ContentView: View {
     @State private var showLocationEditor = false
     @State private var showLocationSearch = false
     @State private var showVisitOverview = false
+    @State private var showButtons = false
     @State private var showDummy = false
     @State private var locationToEdit: LogLocation?
     
     // vars for location creation and monitoring
-    @State private var newLocation: LogLocation?
+    @State private var newLocation = [LogLocation]()
     
     //@StateObject private var locationManagerDelegate = LocationManagerDelegate()
     @State private var dataManagerVisit: DataManagerVisit
@@ -45,8 +46,11 @@ struct ContentView: View {
         }
         .onAppear {
             // request location
+            // ---
             locationManager.requestAlwaysAuthorization()
+            
             // request notifications
+            // ---
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { success, error in
                 if success {
                     print("All set!")
@@ -67,10 +71,20 @@ struct ContentView: View {
             }
         })
         .onChange(of: newLocation, { ov, nv in
+            print("location creation detected.")
+            for location in newLocation {
+                print("added new location")
+                dataManagerVisit.monitorRegionAtLocation(center: CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), radius: 100.0, identifier: location.uuid.uuidString)
+            }
+            
+            newLocation = []
+            
+            /*
             if nv != nil {
                 print("added new location")
                 dataManagerVisit.monitorRegionAtLocation(center: CLLocationCoordinate2D(latitude: newLocation!.latitude, longitude: newLocation!.longitude), radius: 100.0, identifier: newLocation!.uuid.uuidString)
             }
+             */
         })
         // location search
         .sheet(isPresented: $showLocationSearch, onDismiss: {
@@ -95,24 +109,54 @@ struct ContentView: View {
         })
         .overlay(alignment: .bottomTrailing) {
             VStack {
-                
-                Button {
-                    showVisitOverview = true
-                } label: {
-                    Image(systemName: "list.dash.header.rectangle")
-                        .font(.title.weight(.semibold))
-                        .padding()
-                        .background(Color.gray)
-                        .foregroundColor(.white)
-                        .clipShape(Circle())
-                        .shadow(radius: 4, x: 0, y: 4)
+                if showButtons {
+                    /*
+                     Button {
+                     dataManagerVisit.listRegions()
+                     showButtons = false
+                     } label: {
+                     Image(systemName: "info.circle")
+                     .font(.title.weight(.semibold))
+                     .padding()
+                     .background(Color.gray)
+                     .foregroundColor(.white)
+                     .clipShape(Circle())
+                     .shadow(radius: 4, x: 0, y: 4)
+                     }
+                     .padding()
+                     */
+                    Button {
+                        showVisitOverview = true
+                        showButtons = false
+                    } label: {
+                        Image(systemName: "list.dash.header.rectangle")
+                            .font(.title.weight(.semibold))
+                            .padding()
+                            .background(Color.gray)
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(radius: 4, x: 0, y: 4)
+                    }
+                    .padding()
+                    
+                    Button {
+                        addLocation()
+                        showButtons = false
+                    } label: {
+                        Image(systemName: "plus")
+                            .font(.title.weight(.semibold))
+                            .padding()
+                            .background(Color.gray)
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(radius: 4, x: 0, y: 4)
+                    }
+                    .padding()
                 }
-                .padding()
-                 
                 Button {
-                    addLocation()
+                    showButtons.toggle()
                 } label: {
-                    Image(systemName: "plus")
+                    Image(systemName: showButtons ? "arrow.down" : "arrow.up")
                         .font(.title.weight(.semibold))
                         .padding()
                         .background(Color.gray)
@@ -178,6 +222,21 @@ extension ContentView {
                 print ("startMonitoring for region: \(region.identifier)")
             } else {
                 print ("monitoring not available")
+            }
+        }
+        
+        func stopMonitorRegionAtLocation(identifier: UUID) {
+            for region in dataManagerLocationManager.monitoredRegions {
+                if region.identifier == identifier.uuidString {
+                    dataManagerLocationManager.stopMonitoring(for: region)
+                }
+            }
+            
+        }
+        
+        func listRegions() {
+            for region in dataManagerLocationManager.monitoredRegions {
+                print(region.identifier)
             }
         }
         

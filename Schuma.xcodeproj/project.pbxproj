@@ -18,6 +18,7 @@
 		50B569282B3DEE21004186CD /* VisitOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B569272B3DEE21004186CD /* VisitOverview.swift */; };
 		50B5692A2B3DEE31004186CD /* LogLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B569292B3DEE31004186CD /* LogLocation.swift */; };
 		50B5692C2B3DEE44004186CD /* LocationVisit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B5692B2B3DEE44004186CD /* LocationVisit.swift */; };
+		50B569322B3E3C5C004186CD /* SchumaLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B569312B3E3C5C004186CD /* SchumaLaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		50B569292B3DEE31004186CD /* LogLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLocation.swift; sourceTree = "<group>"; };
 		50B5692B2B3DEE44004186CD /* LocationVisit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVisit.swift; sourceTree = "<group>"; };
 		50B5692F2B3DEFC3004186CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		50B569302B3E3AB5004186CD /* gpx-a54-streifenfahrt-1.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = "gpx-a54-streifenfahrt-1.gpx"; path = "../../../../Downloads/Archiv/gpx-a54-streifenfahrt-1.gpx"; sourceTree = "<group>"; };
+		50B569312B3E3C5C004186CD /* SchumaLaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SchumaLaunchScreen.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +53,7 @@
 		50B569032B3DEC57004186CD = {
 			isa = PBXGroup;
 			children = (
+				50B569302B3E3AB5004186CD /* gpx-a54-streifenfahrt-1.gpx */,
 				50B5690E2B3DEC57004186CD /* Schuma */,
 				50B5690D2B3DEC57004186CD /* Products */,
 			);
@@ -72,6 +76,7 @@
 				50B5691F2B3DED86004186CD /* HelperFunctions.swift */,
 				50B5692D2B3DEEE9004186CD /* Views */,
 				50B5692E2B3DEEF3004186CD /* Models */,
+				50B569312B3E3C5C004186CD /* SchumaLaunchScreen.storyboard */,
 				50B569152B3DEC58004186CD /* Assets.xcassets */,
 				50B569172B3DEC58004186CD /* Preview Content */,
 			);
@@ -166,6 +171,7 @@
 			files = (
 				50B569192B3DEC58004186CD /* Preview Assets.xcassets in Resources */,
 				50B569162B3DEC58004186CD /* Assets.xcassets in Resources */,
+				50B569322B3E3C5C004186CD /* SchumaLaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,11 +328,12 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Schuma/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = SchumaLaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -354,11 +361,12 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Schuma/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = SchumaLaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

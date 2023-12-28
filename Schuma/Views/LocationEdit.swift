@@ -14,7 +14,7 @@ struct LocationEdit: View {
     
     @Binding var show: Bool
     @Binding var showParent: Bool
-    @Binding var creation: LogLocation?
+    @Binding var creation: [LogLocation]
     
     @State var logLocation: LogLocation
     
@@ -66,7 +66,7 @@ struct LocationEdit: View {
                 if creationMode {
                     modelContext.insert(logLocation)
                     //locationManagerDelegate.monitorRegionAtLocation(center: CLLocationCoordinate2D(latitude: logLocation.latitude, longitude: logLocation.longitude), radius: 100.0, identifier: logLocation.uuid.uuidString)
-                    creation = logLocation
+                    creation.append(logLocation)
                     showParent.toggle()
                     show.toggle()
                 }
