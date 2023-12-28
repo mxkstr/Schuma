@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		50B569102B3DEC57004186CD /* SchumaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B5690F2B3DEC57004186CD /* SchumaApp.swift */; };
 		50B569122B3DEC57004186CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B569112B3DEC57004186CD /* ContentView.swift */; };
-		50B569142B3DEC57004186CD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B569132B3DEC57004186CD /* Item.swift */; };
 		50B569162B3DEC58004186CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B569152B3DEC58004186CD /* Assets.xcassets */; };
 		50B569192B3DEC58004186CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B569182B3DEC58004186CD /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -18,7 +17,6 @@
 		50B5690C2B3DEC57004186CD /* Schuma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Schuma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50B5690F2B3DEC57004186CD /* SchumaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchumaApp.swift; sourceTree = "<group>"; };
 		50B569112B3DEC57004186CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		50B569132B3DEC57004186CD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		50B569152B3DEC58004186CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50B569182B3DEC58004186CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -55,7 +53,6 @@
 			children = (
 				50B5690F2B3DEC57004186CD /* SchumaApp.swift */,
 				50B569112B3DEC57004186CD /* ContentView.swift */,
-				50B569132B3DEC57004186CD /* Item.swift */,
 				50B569152B3DEC58004186CD /* Assets.xcassets */,
 				50B569172B3DEC58004186CD /* Preview Content */,
 			);
@@ -141,7 +138,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				50B569122B3DEC57004186CD /* ContentView.swift in Sources */,
-				50B569142B3DEC57004186CD /* Item.swift in Sources */,
 				50B569102B3DEC57004186CD /* SchumaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
