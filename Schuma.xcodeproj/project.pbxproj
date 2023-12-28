@@ -11,6 +11,13 @@
 		50B569122B3DEC57004186CD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B569112B3DEC57004186CD /* ContentView.swift */; };
 		50B569162B3DEC58004186CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B569152B3DEC58004186CD /* Assets.xcassets */; };
 		50B569192B3DEC58004186CD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50B569182B3DEC58004186CD /* Preview Assets.xcassets */; };
+		50B569202B3DED86004186CD /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B5691F2B3DED86004186CD /* HelperFunctions.swift */; };
+		50B569222B3DEDB6004186CD /* LocationSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B569212B3DEDB6004186CD /* LocationSearch.swift */; };
+		50B569242B3DEDF6004186CD /* LocationEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B569232B3DEDF6004186CD /* LocationEdit.swift */; };
+		50B569262B3DEE0E004186CD /* LocationOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B569252B3DEE0E004186CD /* LocationOverview.swift */; };
+		50B569282B3DEE21004186CD /* VisitOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B569272B3DEE21004186CD /* VisitOverview.swift */; };
+		50B5692A2B3DEE31004186CD /* LogLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B569292B3DEE31004186CD /* LogLocation.swift */; };
+		50B5692C2B3DEE44004186CD /* LocationVisit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B5692B2B3DEE44004186CD /* LocationVisit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +26,14 @@
 		50B569112B3DEC57004186CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		50B569152B3DEC58004186CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50B569182B3DEC58004186CD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		50B5691F2B3DED86004186CD /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
+		50B569212B3DEDB6004186CD /* LocationSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearch.swift; sourceTree = "<group>"; };
+		50B569232B3DEDF6004186CD /* LocationEdit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationEdit.swift; sourceTree = "<group>"; };
+		50B569252B3DEE0E004186CD /* LocationOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationOverview.swift; sourceTree = "<group>"; };
+		50B569272B3DEE21004186CD /* VisitOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitOverview.swift; sourceTree = "<group>"; };
+		50B569292B3DEE31004186CD /* LogLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogLocation.swift; sourceTree = "<group>"; };
+		50B5692B2B3DEE44004186CD /* LocationVisit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationVisit.swift; sourceTree = "<group>"; };
+		50B5692F2B3DEFC3004186CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +66,12 @@
 		50B5690E2B3DEC57004186CD /* Schuma */ = {
 			isa = PBXGroup;
 			children = (
+				50B5692F2B3DEFC3004186CD /* Info.plist */,
 				50B5690F2B3DEC57004186CD /* SchumaApp.swift */,
 				50B569112B3DEC57004186CD /* ContentView.swift */,
+				50B5691F2B3DED86004186CD /* HelperFunctions.swift */,
+				50B5692D2B3DEEE9004186CD /* Views */,
+				50B5692E2B3DEEF3004186CD /* Models */,
 				50B569152B3DEC58004186CD /* Assets.xcassets */,
 				50B569172B3DEC58004186CD /* Preview Content */,
 			);
@@ -65,6 +84,26 @@
 				50B569182B3DEC58004186CD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		50B5692D2B3DEEE9004186CD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				50B569212B3DEDB6004186CD /* LocationSearch.swift */,
+				50B569232B3DEDF6004186CD /* LocationEdit.swift */,
+				50B569252B3DEE0E004186CD /* LocationOverview.swift */,
+				50B569272B3DEE21004186CD /* VisitOverview.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		50B5692E2B3DEEF3004186CD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50B569292B3DEE31004186CD /* LogLocation.swift */,
+				50B5692B2B3DEE44004186CD /* LocationVisit.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +176,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50B569242B3DEDF6004186CD /* LocationEdit.swift in Sources */,
+				50B569262B3DEE0E004186CD /* LocationOverview.swift in Sources */,
 				50B569122B3DEC57004186CD /* ContentView.swift in Sources */,
 				50B569102B3DEC57004186CD /* SchumaApp.swift in Sources */,
+				50B569222B3DEDB6004186CD /* LocationSearch.swift in Sources */,
+				50B569202B3DED86004186CD /* HelperFunctions.swift in Sources */,
+				50B569282B3DEE21004186CD /* VisitOverview.swift in Sources */,
+				50B5692C2B3DEE44004186CD /* LocationVisit.swift in Sources */,
+				50B5692A2B3DEE31004186CD /* LogLocation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +321,9 @@
 				DEVELOPMENT_TEAM = 54L2WLF878;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Schuma/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +353,9 @@
 				DEVELOPMENT_TEAM = 54L2WLF878;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Schuma/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

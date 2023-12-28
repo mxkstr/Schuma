@@ -12,7 +12,8 @@ import SwiftData
 struct SchumaApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            
+            LogLocation.self,
+            LocationVisit.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -25,7 +26,7 @@ struct SchumaApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(visitModel: sharedModelContainer.mainContext)
         }
         .modelContainer(sharedModelContainer)
     }
